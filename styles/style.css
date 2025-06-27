@@ -72,14 +72,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /*--------------------*/
+* {
+  box-sizing: border-box;
+}
+
 body {
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Comfortaa", cursive;
+  margin: 0;
   background-color: #F3F6FD;
+  font-weight: 400;
 }
 
 .app {
   display: flex;
-  gap: 50px;
 }
 
 .logo {
@@ -107,7 +112,7 @@ body {
 }
 
 .menu__item {
-  background-color: #ffffff;
+  background: #FFFFFF;
   box-shadow: 0px 8px 14px rgba(62, 107, 224, 0.12);
   border-radius: 14px;
   border: none;
@@ -142,7 +147,7 @@ body {
 }
 
 .menu__add:hover {
-  background: #E7EBFF;
+  background: #EFF2FF;
 }
 
 .content {
@@ -156,7 +161,7 @@ header {
   align-items: center;
 }
 
-.title {
+h1 {
   font-size: 30px;
   line-height: 33px;
   color: #000000;
@@ -167,6 +172,11 @@ header {
   flex-direction: column;
   gap: 12px;
   min-width: 235px;
+}
+
+.progress__text {
+  display: flex;
+  justify-content: space-between;
 }
 
 .progress__name {
@@ -181,22 +191,17 @@ header {
   color: #768396;
 }
 
-.progress__text {
-  display: flex;
-  justify-content: space-between;
-}
-
 .progress__bar {
   width: 100%;
-  height: 5px;
-  background: #E6E9E0;
+  background: #E6E9ED;
   border-radius: 4px;
+  height: 5px;
   position: relative;
 }
 
 .progress__cover-bar {
   position: absolute;
-  width: 80%;
+  transition: all 0.5s;
   height: 5px;
   border-radius: 4px;
   background: #5051F9;
@@ -215,7 +220,7 @@ main {
 }
 
 .habbit__day {
-  background: #e9e7f3;
+  background: #FBFAFF;
   border-radius: 10px 0 0 10px;
   border-right: 1px solid #E7EBFB;
   font-size: 14px;
@@ -249,8 +254,9 @@ input {
   border: 1px solid #E7EBFB;
   border-radius: 9px;
   padding: 12px 20px;
-  font-family: "Comfortaa", sans-serif;
+  font-family: "Comfortaa", cursive;
   flex: 1;
+  font-weight: 400;
   font-size: 14px;
   line-height: 16px;
 }
@@ -263,24 +269,26 @@ input::placeholder {
   color: #8899A8;
 }
 
-.input__icon {
-  position: absolute;
-  top: 10px;
-  left: 45px;
+input.error {
+  border: 1px solid red;
+}
+
+.habbit__form {
+  display: flex;
+  gap: 15px;
+  width: 100%;
+  padding: 0px 10px 0 25px;
+  position: relative;
 }
 
 .input_icon {
   padding-left: 45px;
 }
 
-.habbit__form {
-  display: flex;
-  gap: 15px;
-  font-size: 16px;
-  line-height: 18px;
-  padding: 0px 10px 0px 25px;
-  width: 100%;
-  position: relative;
+.input__icon {
+  position: absolute;
+  top: 10px;
+  left: 45px;
 }
 
 .button {
@@ -296,4 +304,101 @@ input::placeholder {
 
 .button:hover {
   background: #dcdaff;
+}
+
+.cover {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cover_hidden {
+  display: none;
+}
+
+.popup {
+  background: #FFFFFF;
+  box-shadow: 0px 8px 14px 12px rgba(56, 56, 56, 0.05);
+  border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.popup__close {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
+h2 {
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 27px;
+}
+
+.icon-label {
+  font-size: 14px;
+  line-height: 16px;
+  color: #768396;
+  margin-bottom: 10px;
+}
+
+.icon-select {
+  display: flex;
+  gap: 25px;
+  margin-bottom: 20px;
+}
+
+.icon {
+  border: 1px solid #5051F9;
+  border-radius: 14px;
+  background: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+}
+
+.icon_active {
+  background: #5051F9;
+}
+
+.icon:hover {
+  background: #6A6AFB;
+}
+
+.icon:hover img {
+  filter: brightness(0) invert(1);
+}
+
+.icon_active img {
+  filter: brightness(0) invert(1);
+}
+
+.popup__form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.popup__form input {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */
